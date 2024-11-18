@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Cooperative Dashboard</h1>
+    <h2>Members</h2>
+    <ul>
+        {% for member in members %}
+            <li>{{ member.name }} - Joined: {{ member.join_date }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Loans</h2>
+    <ul>
+        {% for loan in loans %}
+            <li>{{ loan.member.name }} - Amount: ${{ loan.amount }} - Status: {{ loan.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
